@@ -2,6 +2,7 @@ import sys
 import os
 
 from game import game
+from main_menu.help_menu import help_option
 
 
 def start():
@@ -22,23 +23,9 @@ def choose_option():
         game.start_game()
     elif option.lower() == 'help':
         help_option()
+        start()
     elif option.lower() == 'quit':
         sys.exit()
     else:
         print("Invalid command. Please choose 'play', 'help', or 'quit'.")
         choose_option()
-
-
-def help_option():
-    print('################################')
-    print('# Welcome to the Mystery Game! #')
-    print('################################')
-    print('- Use up, down, left, right to move.')
-    print('- Type your commands to do them.')
-    print('- Use "examine" to inspect something.')
-    print('- Use "take" to put item in a bag.')
-    print('- Good luck and have fun!\n')
-    print("Press the 'Enter' key to return to the main menu.")
-
-    input()
-    start()

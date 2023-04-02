@@ -1,12 +1,14 @@
 from constants import dialog
-from models.player import player, valid_classes, set_class
+from game.examine import examine
+from game.move import move
+from main_menu.help_menu import help_option
+from models.player import player, valid_classes, set_class, print_location
 from utils.type_util import print_slow
-from map import zone_map
 
 import os
 import sys
 
-available_actions = ['quit', 'move']
+available_actions = ['quit', 'move', 'help', 'whereami', 'examine']
 
 
 def start_game():
@@ -58,64 +60,19 @@ def prompt():
 
     while not any(action.lower() in actions for actions in available_actions):
         print('Unknown action, try again.\n')
-        action = input('> ')
+        action = input('> ').lower()
 
-    if action.lower() == 'quit':
+    if action == 'quit':
         sys.exit()
-    elif action.lower() == 'move':
+    elif action == 'help':
+        help_option()
+    elif action == 'move':
         move()
+    elif action == 'whereami':
+        print_location()
+    elif action == 'examine':
+        examine()
     # elif action.lower() in available_actions['EXAMINE']:
     # examine()
     # elif action.lower() in available_actions['TAKE']:
     #     take()
-
-
-def move():
-    print_slow('Where would you like to move?\n')
-    handle_moves()
-
-
-def handle_moves():
-    movements = {"north": (-1, 0), "south": (1, 0), "west": (0, -1), "east": (0, 1)}
-
-    direction = input("> ").lower().strip()
-    x, y = player.location
-
-    if direction not in movements:
-        print("Please select a valid direction. Your options are North, South, West, or East.")
-        handle_moves()
-
-    dx, dy = movements[direction]
-    new_x, new_y = x + dx, y + dy
-
-    if new_x < 0:
-        print_slow(dialog.MOVE_LIMIT_NORTH)
-        print(dialog.CONTINUE)
-        input()
-        return
-    elif new_x >= len(zone_map[y]):
-        print_slow(dialog.MOVE_LIMIT_SOUTH)
-        print(dialog.CONTINUE)
-        input()
-        return
-    elif new_y < 0:
-        print_slow(dialog.MOVE_LIMIT_SOUTH)
-        print(dialog.CONTINUE)
-        input()
-        return
-    elif new_y >= len(zone_map):
-        print_slow(dialog.MOVE_LIMIT_SOUTH)
-        print(dialog.CONTINUE)
-        input()
-        return
-
-    print(f"You have traveled to the {direction.capitalize()}.")
-    player.location = [new_x, new_y]
-
-
-def print_location():
-    x, y = player.location
-    location = zone_map.get(x, {}).get(y, {})
-    description = location.get('DESCRIPTION', '')
-    width = len(description) + 4
-    print(f"\n{'#' * width}\n# {description} #\n{'#' * width}")

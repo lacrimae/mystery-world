@@ -1,0 +1,16 @@
+def help_option():
+    print('#################################')
+    print('# Welcome to the Mystery Game!  #')
+    print('#                               #')
+    print('#          Help Menu            #')
+    print('#                               #')
+    print('#################################')
+    print("To play the game, use the following commands: 'move', 'whereami', 'examine', and 'take'.")
+    print("To move in a specific direction, use one of the following commands: north, south, west, or east.")
+    print("To check your current location, use the command 'whereami'.")
+    print("To examine an object or item, use the command 'examine'.")
+    print("To pick up an item, use the command 'take'.")
+    print("Good luck and have fun!\n")
+    print("Press the 'Enter' key to return to the main menu.")
+
+    input()

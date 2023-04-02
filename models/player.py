@@ -1,3 +1,5 @@
+from map import zone_map, DESCRIPTION, WHERE_AM_I
+
 valid_classes = {
     'warrior': {
         'hp': 150,
@@ -21,7 +23,7 @@ class Player:
         self.mp = 0
         self.status_effects = []
         # todo: start location should be random each game
-        self.location = [0, 1]
+        self.location = [1, 1]
         self.game_over = False
 
 
@@ -32,3 +34,11 @@ def set_class(clazz):
     player.clazz = clazz
     player.hp = valid_classes[clazz]['hp']
     player.mp = valid_classes[clazz]['mp']
+
+
+def print_location():
+    x, y = player.location
+    location = zone_map.get(x, {}).get(y, {})
+    whereami = location.get(WHERE_AM_I)
+    width = len(whereami) + 4
+    print(f"\n{'#' * width}\n# {whereami} #\n{'#' * width}")
