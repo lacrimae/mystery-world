@@ -1,3 +1,18 @@
+valid_classes = {
+    'warrior': {
+        'hp': 150,
+        'mp': 0
+    },
+    'rogue': {
+        'hp': 100,
+        'mp': 50
+    },
+    'mage': {
+        'hp': 50,
+        'mp': 100
+    }}
+
+
 class Player:
     def __init__(self):
         self.name = ''
@@ -11,3 +26,9 @@ class Player:
 
 
 player = Player()
+
+
+def set_class(clazz):
+    player.clazz = clazz
+    player.hp = valid_classes[clazz]['hp']
+    player.mp = valid_classes[clazz]['mp']

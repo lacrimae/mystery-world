@@ -2,26 +2,30 @@
 0,1 0,2... # PLAYER STARTS AT 1,1
 
             OCEAN
+              0   1   2   3
             ─────────────────
-MOUNTAINS   │   │   │   │   │ 0,3  HIGH CLIFF
+MOUNTAINS   │   │   │ ^ │   │ 0  HIGH CLIFF
             ─────────────────
-            │   │ x │   │   │ 1,3
+            │ ~ │ H │ ^ │ ^ │ 1
             ─────────────────
-            │   │   │   │   │ 2,3...
+            │ ^ │ ^ │ ^ │   │ 2
             ─────────────────
-            │   │   │   │   │
+            │   │ ~ │   │   │ 3
             ─────────────────
             DESERT
+
+Legend:
+^ - Forest/Trees
+~ - Lake/River
+x - Island in the Ocean
+H - Home
+
 """
 
 ZONE_NAME = 'zone'
 DESCRIPTION = 'description'
 EXAMINATION = 'examine'
 SOLVED = False
-UP = ['up', 'north']
-DOWN = ['down', 'south']
-LEFT = ['left', 'west']
-RIGHT = ['right', 'east']
 
 solved_places = [[False, False, False, False],
                  [False, False, False, False],
@@ -30,6 +34,84 @@ solved_places = [[False, False, False, False],
 
 zone_map = {
     0: {
+        0: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        1: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        2: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        3: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+    },
+    1: {
+        0: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        1: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        2: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        3: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+    },
+    2: {
+        0: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        1: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        2: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+        3: {
+            ZONE_NAME: 'Home',
+            DESCRIPTION: 'description',
+            EXAMINATION: 'examine',
+            SOLVED: False
+        },
+    },
+    3: {
         0: {
             ZONE_NAME: 'Home',
             DESCRIPTION: 'description',

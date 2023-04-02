@@ -6,6 +6,10 @@ from threading import Thread
 waiting_time = 0.05
 
 
+# Uncomment the following line to test the game without delayed printing (for debugging purposes only)
+# waiting_time = 0
+
+
 # todo: implement interruption of typing (when a player presses "enter", text should be typed instantly)
 # def check():
 #     i = input()

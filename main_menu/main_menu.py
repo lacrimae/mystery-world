@@ -24,9 +24,9 @@ def choose_option():
         help_option()
     elif option.lower() == 'quit':
         sys.exit()
-        # else:
-        #     print("Please choose 'play', 'help', or 'quit'.")
-        #     option = input("> ")
+    else:
+        print("Invalid command. Please choose 'play', 'help', or 'quit'.")
+        choose_option()
 
 
 def help_option():
