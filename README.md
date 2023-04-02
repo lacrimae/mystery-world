@@ -10,7 +10,7 @@ and loot.
 
 ## How to play
 
-To play the game, simply download the code and run the `rpg.py` file using Python 3.6 or later. Follow the on-screen
+To play the game, simply download the code and run the `mystery.py` file using Python 3.6 or later. Follow the on-screen
 instructions to create your character and begin your adventure.
 
 ## Contributing
