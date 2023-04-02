@@ -1,5 +1,5 @@
 from constants import dialog
-from map import zone_map, DESCRIPTION
+from map import zone_map, DESC
 from models.player import player
 from utils.type_util import print_slow
 
@@ -44,5 +44,5 @@ def handle_moves():
         return
 
     print(f"You have traveled to the {direction.capitalize()}.")
-    print_slow(zone_map[new_x][new_y][DESCRIPTION] + '\n')
+    print_slow(zone_map[new_x][new_y][DESC] + '\n')
     player.location = [new_x, new_y]
