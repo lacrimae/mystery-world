@@ -22,6 +22,7 @@ class Player:
         self.hp = 0
         self.mp = 0
         self.status_effects = []
+        self.inventory = []
         # todo: start location should be random each game
         self.location = [1, 1]
         self.game_over = False

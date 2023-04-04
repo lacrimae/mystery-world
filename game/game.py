@@ -1,6 +1,7 @@
 from constants import dialog
 from game.examine import examine
 from game.move import move
+from game.take import take
 from main_menu.help_menu import help_option
 from models.player import player, valid_classes, set_class, print_location
 from utils.type_util import print_slow
@@ -8,7 +9,7 @@ from utils.type_util import print_slow
 import os
 import sys
 
-available_actions = ['quit', 'move', 'help', 'whereami', 'examine']
+available_actions = ['quit', 'move', 'help', 'whereami', 'examine', 'take']
 
 
 def start_game():
@@ -72,7 +73,7 @@ def prompt():
         print_location()
     elif action == 'examine':
         examine()
-    # elif action.lower() in available_actions['EXAMINE']:
-    # examine()
+    elif action == 'take':
+        take()
     # elif action.lower() in available_actions['TAKE']:
     #     take()
