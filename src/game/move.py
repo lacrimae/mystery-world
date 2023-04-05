@@ -1,7 +1,7 @@
-from constants import dialog
-from map import zone_map, DESC
-from models.player import player
-from utils.type_util import print_slow
+from src.constants import dialog
+from src.models.map import zone_map, DESC
+from src.models.player import player
+from src.utils.type_util import print_slow
 
 
 def move():

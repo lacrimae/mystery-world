@@ -1,7 +1,7 @@
-from constants import dialog
-from map import zone_map, ITEMS, EXAMINATION, DESC
-from models.player import player
-from utils.type_util import print_slow
+from src.constants import dialog
+from src.models.map import zone_map, ITEMS, EXAMINATION, DESC
+from src.models.player import player
+from src.utils.type_util import print_slow
 
 
 def examine():
@@ -24,10 +24,9 @@ def examine():
 
 
 def print_item_desc(items, item):
-    for i in items:
-        if i.lower() == item:
-            print_slow(items[i][DESC] + '\n\n')
-            return
+    if item.lower() in items:
+        print_slow(items[item][DESC] + '\n\n')
+        return
 
     print(f"Please choose a valid item. Available items for examination: {', '.join(items)}.\n")
     print_item_desc(items, input('> ').lower())

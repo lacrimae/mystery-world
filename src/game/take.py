@@ -1,20 +1,21 @@
-from constants import dialog
-from map import zone_map, ITEMS, CAN_BE_TAKEN, EXAMINATION
-from models.player import player
-from utils.type_util import print_slow
+from src.constants import dialog
+from src.models.map import zone_map, ITEMS, CAN_BE_TAKEN, EXAMINATION
+from src.models.player import player
+from src.utils.type_util import print_slow
 
 
 def take():
     x, y = player.location
     location = zone_map.get(x, {}).get(y, {})
     items = location.get(ITEMS)
-    items_can_be_taken = [item for item in items.keys() if items[item][CAN_BE_TAKEN] and item not in player.inventory]
+    items_can_be_taken = [item.lower() for item in items.keys() if
+                          items[item][CAN_BE_TAKEN] and item not in player.inventory]
 
     print_slow(location.get(EXAMINATION))
 
     if items_can_be_taken:
         print_slow(f'\nWhat would you like to pick up?\n')
-        print_slow(f"(You can take {', '.join(items_can_be_taken)})\n")
+        print_slow(f"(You can take {', '.join(items_can_be_taken).capitalize()})\n")
 
         take_item(items_can_be_taken)
     else:

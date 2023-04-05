@@ -1,4 +1,4 @@
-from map import zone_map, WHERE_AM_I
+from src.models.map import zone_map, WHERE_AM_I
 
 valid_classes = {
     'warrior': {

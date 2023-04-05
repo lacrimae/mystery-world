@@ -2,10 +2,10 @@ import io
 import unittest
 from unittest.mock import patch
 
-from constants import dialog
-from game.examine import examine
-from map import zone_map, ITEMS, EXAMINATION, DESC
-from models.player import player
+from src.constants import dialog
+from src.game.examine import examine
+from src.models.map import zone_map, ITEMS, EXAMINATION, DESC
+from src.models.player import player
 
 
 class TestExamine(unittest.TestCase):

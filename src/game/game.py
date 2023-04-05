@@ -1,10 +1,10 @@
-from constants import dialog
-from game.examine import examine
-from game.move import move
-from game.take import take
-from main_menu.help_menu import help_option
-from models.player import player, valid_classes, set_class, print_location
-from utils.type_util import print_slow
+from src.constants import dialog
+from src.game.examine import examine
+from src.game.move import move
+from src.game.take import take
+from src.main_menu.help_menu import help_option
+from src.models.player import player, valid_classes, set_class, print_location
+from src.utils.type_util import print_slow
 
 import os
 import sys

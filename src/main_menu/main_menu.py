@@ -1,8 +1,8 @@
 import sys
 import os
 
-from game import game
-from main_menu.help_menu import help_option
+from src.game import game
+from src.main_menu.help_menu import help_option
 
 
 def start():

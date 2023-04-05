@@ -4,6 +4,14 @@ This is a text-based role-playing game created using Python. In this game, playe
 characters, explore a vast open world filled with quests and challenges, and battle fearsome monsters to gain experience
 and loot.
 
+## How to Play
+
+`python mystery.py`
+
+## Run Tests
+
+`python -m pytest`
+
 ## Features
 
 [//]: # (todo: describe all availabe features)
