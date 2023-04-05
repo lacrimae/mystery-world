@@ -1,6 +1,6 @@
 from src.constants import dialog
-from src.models.map import zone_map, ITEMS, EXAMINATION, DESC
-from src.models.player import player
+from src.model.map import zone_map, ITEMS, EXAMINATION, DESC
+from src.model.player import player
 from src.utils.type_util import print_slow
 
 

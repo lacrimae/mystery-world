@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 from src.constants import dialog
 from src.game.take import take
-from src.models.map import zone_map, ITEMS, CAN_BE_TAKEN, EXAMINATION
-from src.models.player import player
+from src.model.map import zone_map, ITEMS, CAN_BE_TAKEN, EXAMINATION
+from src.model.player import player
 
 
 class TestTake(unittest.TestCase):

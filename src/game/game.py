@@ -3,13 +3,13 @@ from src.game.examine import examine
 from src.game.move import move
 from src.game.take import take
 from src.main_menu.help_menu import help_option
-from src.models.player import player, valid_classes, set_class, print_location
+from src.model.player import player, VALID_CLASSES
 from src.utils.type_util import print_slow
 
 import os
 import sys
 
-available_actions = ['quit', 'move', 'help', 'whereami', 'examine', 'take']
+available_actions = ['quit', 'move', 'help', 'whereami', 'examine', 'take', 'inventory']
 
 
 def start_game():
@@ -30,8 +30,8 @@ def setup():
 
     while True:
         clazz = input('> ').lower()
-        if clazz in valid_classes:
-            set_class(clazz)
+        if clazz in VALID_CLASSES:
+            player.set_class(clazz)
             break
         else:
             print(dialog.SETUP_2_2)
@@ -70,10 +70,10 @@ def prompt():
     elif action == 'move':
         move()
     elif action == 'whereami':
-        print_location()
+        player.print_location()
     elif action == 'examine':
         examine()
     elif action == 'take':
         take()
-    # elif action.lower() in available_actions['TAKE']:
-    #     take()
+    elif action == 'inventory':
+        player.open_inventory()
